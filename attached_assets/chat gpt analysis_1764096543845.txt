@@ -1,0 +1,110 @@
+
+# **Website Overview (Short + Complete Description)**
+
+## **Header**
+
+* White background, thin bottom border.
+* Left side: simple logo.
+* Right side: menu links — Home, About Us, Services, Contact.
+
+## **Home Page – Hero**
+
+* Soft purple gradient backdrop.
+* Big serif heading: **MUTANTS – WHERE DIGITAL MARKETING EVOLVES**
+* Sub-line: **Innovate. Dominate. Accelerate.**
+* Dark button: **Book a Strategy Call**
+* Large illustration beside/below hero.
+
+## **Our Philosophy**
+
+* Heading: **Our Philosophy**
+* Subline: **Welcome to Team Mutants!**
+* Three short paragraphs describing evolution, creativity + tech, and “we mutate to stay ahead.”
+
+## **Impact Quote Section**
+
+* Centered statement in large text:
+  *We craft digital experiences that merge design, content, and performance—turning ideas into outcomes.*
+* Illustration with green rectangular frame styling.
+
+## **Two-Column Highlight Section**
+
+Left column:
+
+* **Exploring Creative Depths**
+* Text about research, design thinking, storytelling.
+
+Right column:
+
+* **Building Brands for the Long Run**
+* Text about long-term brand ecosystems and continuous optimization.
+
+---
+
+## **About Page – Banner**
+
+* Dark navy neon background with a wireframe human head.
+* Big heading on top: **YOUR GROWTH PARTNER IN THE DIGITAL ERA**
+
+## **About Page Content**
+
+Two paragraphs about:
+
+* Full-service digital agency, creativity + strategy.
+* Based in Jaipur, focusing on SEO, PPC, social media, content, web development, data-driven growth.
+
+## **Feature Badges**
+
+Four rounded blocks:
+
+* ✓ Data Driven
+* ⚡ Fast Execution
+* □ ROI Focused
+* □ Scalable
+
+---
+
+## **Services Page**
+
+* Heading: **OUR SERVICES**
+* Subtext: digital marketing solutions for growth.
+* Grid of colorful illustration cards (3 per row).
+* Service titles:
+
+  * Marketing And Communications Strategy
+  * Brand Ideology And Visual Identity Development
+  * Go To Market Strategy Execution
+  * IMC Platform Management
+  * Media Planning, Buying And Execution
+  * Cross-Channel Content Integration
+  * SEO, SMM, SEM
+  * App/Web Development
+  * Gen AI And Automation
+
+---
+
+## **Contact Page**
+
+* Heading: **Lets Chat**
+* Line: **Contact Shailendra Chaturvedi at 98734 33138**
+* Two-column layout:
+
+  * Left: office address
+
+    ```
+    B, 20, Gopinath Marg, Jayanti Market,
+    New Colony, Jaipur, Rajasthan 302001
+    ```
+  * Right: contact form (First, Last, Email, Comment, Submit).
+* Small floating blue circular help icon bottom-right.
+
+---
+
+## **Visual Style**
+
+* Clean white backgrounds for most sections.
+* Deep purple + light purple accents.
+* Dark green feature badges.
+* Serif display headings, sans-serif body text.
+* Rounded cards, subtle borders, bright illustrations.
+* Responsive: 3-column services grid → 1 column on mobile.
