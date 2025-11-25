@@ -1,20 +1,31 @@
-import { type User, type InsertUser } from "@shared/schema";
+import {
+  type User,
+  type InsertUser,
+  type ContactSubmission,
+  type InsertContactSubmission,
+  type NewsletterSubscriber,
+  type InsertNewsletterSubscriber,
+} from "@shared/schema";
 import { randomUUID } from "crypto";
-
-// modify the interface with any CRUD methods
-// you might need
 
 export interface IStorage {
   getUser(id: string): Promise<User | undefined>;
   getUserByUsername(username: string): Promise<User | undefined>;
   createUser(user: InsertUser): Promise<User>;
+  createContactSubmission(submission: InsertContactSubmission): Promise<ContactSubmission>;
+  createNewsletterSubscriber(subscriber: InsertNewsletterSubscriber): Promise<NewsletterSubscriber>;
+  getNewsletterSubscriber(email: string): Promise<NewsletterSubscriber | undefined>;
 }
 
 export class MemStorage implements IStorage {
   private users: Map<string, User>;
+  private contactSubmissions: Map<string, ContactSubmission>;
+  private newsletterSubscribers: Map<string, NewsletterSubscriber>;
 
   constructor() {
     this.users = new Map();
+    this.contactSubmissions = new Map();
+    this.newsletterSubscribers = new Map();
   }
 
   async getUser(id: string): Promise<User | undefined> {
@@ -32,6 +43,40 @@ export class MemStorage implements IStorage {
     const user: User = { ...insertUser, id };
     this.users.set(id, user);
     return user;
+  }
+
+  async createContactSubmission(
+    insertSubmission: InsertContactSubmission
+  ): Promise<ContactSubmission> {
+    const id = randomUUID();
+    const submission: ContactSubmission = {
+      ...insertSubmission,
+      id,
+      createdAt: new Date(),
+    };
+    this.contactSubmissions.set(id, submission);
+    return submission;
+  }
+
+  async createNewsletterSubscriber(
+    insertSubscriber: InsertNewsletterSubscriber
+  ): Promise<NewsletterSubscriber> {
+    const id = randomUUID();
+    const subscriber: NewsletterSubscriber = {
+      ...insertSubscriber,
+      id,
+      subscribedAt: new Date(),
+    };
+    this.newsletterSubscribers.set(id, subscriber);
+    return subscriber;
+  }
+
+  async getNewsletterSubscriber(
+    email: string
+  ): Promise<NewsletterSubscriber | undefined> {
+    return Array.from(this.newsletterSubscribers.values()).find(
+      (subscriber) => subscriber.email === email
+    );
   }
 }
 
