@@ -4,38 +4,27 @@ import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
 export default defineConfig({
+  base: "/",  // ← Ensures correct asset paths on Vercel
   plugins: [
     react(),
     runtimeErrorOverlay(),
-    // ←←← COMMENT OUT ALL REPLIT PLUGINS FOR VERCEL ←←←
-    // ...(process.env.NODE_ENV !== "production" && process.env.REPL_ID !== undefined
-    //   ? [
-    //       await import("@replit/vite-plugin-cartographer").then((m) =>
-    //         m.cartographer(),
-    //       ),
-    //       await import("@replit/vite-plugin-dev-banner").then((m) =>
-    //         m.devBanner(),
-    //       ),
-    //     ]
-    //   : []),
+    // Replit plugins disabled for production/Vercel — they cause bundle failures
+    // ...(process.env.NODE_ENV !== "production" && process.env.REPL_ID !== undefined ? [...] : []),
   ],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "client/src"),  // ← FIXED: Use __dirname for absolute path
+      "@": path.resolve(__dirname, "client/src"),
       "@shared": path.resolve(__dirname, "shared"),
       "@assets": path.resolve(__dirname, "attached_assets"),
     },
   },
-  // ←←← REMOVED THE CUSTOM ROOT ←←← This was the problem — build from repo root now
-  // root: path.resolve(import.meta.dirname, "client"),
-
+  // Build from repo root — no custom root
   build: {
     outDir: "dist",
     emptyOutDir: true,
-    // ←←← ADD THIS TO ENSURE PROPER INDEX.HTML ←←←
     rollupOptions: {
       input: {
-        main: path.resolve(__dirname, "client/index.html"),  // ← Point directly to your HTML entry
+        main: path.resolve(__dirname, "client/index.html"),  // Explicit entry
       },
     },
   },
