@@ -1,12 +1,15 @@
 {
+  "version": 2,
   "builds": [
     {
       "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
+        "zeroConfig": true,
         "distDir": "dist/public"
       }
     }
   ],
+  "outputDirectory": "dist/public",
   "framework": null
 }
