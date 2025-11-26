@@ -15,7 +15,7 @@ export default defineConfig({
     outDir: "dist",
     emptyOutDir: true,
     rollupOptions: {
-      input: path.resolve(__dirname, "client/index.html"),
+      input: path.resolve(__dirname, "client/index.html"),   // ← this forces correct bundling
     },
   },
 });
