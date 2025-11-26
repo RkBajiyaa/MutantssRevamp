@@ -15,7 +15,7 @@ export default defineConfig({
     outDir: "dist",
     emptyOutDir: true,
     rollupOptions: {
-      input: path.resolve(__dirname, "client/index.html"),   // ← this forces correct bundling
+      input: path.resolve(__dirname, "index.html"),  // ← ROOT INDEX AS ENTRY (the fix)
     },
   },
 });
